@@ -19,10 +19,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: ./package-lock.json
-    - name: Install Chrome
-      run: |
-        sudo apt update
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo apt install -y /google-chrome-stable_current_amd64.deb
+
+    - name: 'Setup Chrome'
+      uses: browser-actions/setup-chrome@latest
+
     - run: npm ci
     - run: npm run codeceptjs
