@@ -13,7 +13,7 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: 'https://codecept.io/',
-      show: true,
+      show: false,
       windowSize: '1200x900'
     }
   },
